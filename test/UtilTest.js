@@ -15,7 +15,7 @@ function Stringify(assert, error, done) {
 
     const complexObject = { a: 1, b: { c: 2 } };
     assert(() => Util.stringify(complexObject) === '{ a:1.00, b:[object Object] }');
-    assert(() => Util.stringify(complexObject, { recursive: 2 }) === '{ a:1.00, b:{ c:2.00 } }');
+    assert(() => Util.stringify(complexObject, { recursion: 2 }) === '{ a:1.00, b:{ c:2.00 } }');
 
     const binary = new Uint8Array([60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70]);
     assert(() => Util.stringify(binary) === '<=>?@ABCDEF');
