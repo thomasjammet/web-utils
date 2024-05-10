@@ -6,3 +6,6 @@ dist/*
 
 # Ignore documentation
 docs/*
+
+# Ignore coverage
+coverage/*

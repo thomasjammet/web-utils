@@ -45,6 +45,14 @@ npm install
 npm run build
 ```
 
+## Unit tests
+
+This library includes [Jest] unit tests that can be run using the following npm command:
+
+```bash
+npm run test
+```
+
 ## Documentation
 
 This monorepo also contains built-in documentation about the APIs in the library, which can be built using the following npm command:
@@ -60,3 +68,5 @@ All contributions are welcome. Please see [our contribution guide](/CONTRIBUTING
 ## License
 
 By contributing code to this project, you agree to license your contribution under the [GNU Affero General Public License](/LICENSE).
+
+[Jest]: https://jestjs.io/
