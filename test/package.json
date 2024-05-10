@@ -1,0 +1,7 @@
+{
+    "name": "unit-tests",
+    "type": "module",
+    "devDependencies": {
+        "ws": "^8.17.0"
+    }
+}

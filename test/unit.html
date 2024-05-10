@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Unit Tests</title>
+    </head>
+    <body>
+        <table id="testTable">
+        </table>
+        <script type="module">
+            import {} from './UtilTest.js';
+            import {} from './WebSocketReliableTest.js';
+            import { Util, tests } from '../dist/web-utils.js';
+
+            let buttons = new Array();
+            function enableButtons(enabled=true) {
+                for(let button of buttons)
+                    button.disabled = !enabled;
+            }
+            function setStatus(test, status, color="black") {
+                const id = 'test_' + test.name;
+                const Status = document.getElementById(id);
+                if (Status) {
+                    Status.style.color = color;
+                    Status.innerHTML = status;
+                }
+            }
+            window.runAll = async function() {
+                for (let index = 0; index < tests.length; index++) {
+                    run(index);
+                }
+            }
+            window.run = async function(index) {
+                const test = tests[index];
+                enableButtons(false);
+                setStatus(test, 'Running...');
+                await test(error => setStatus(test, error, "red"));
+                setStatus(test, 'OK');
+                enableButtons();
+            }
+
+            // Create a row for each test
+            const table = document.getElementById("testTable");
+            for (let index = 0; index < tests.length; index++) {
+                const test = tests[index];
+                table.innerHTML += `
+                    <tr>
+                        <td>Test ${test.name}</td>
+                        <td><button onclick="run(${index})">Run</button></td>
+                        <td><span id="test_${test.name}"></span></td>
+                    </tr>
+                `;
+            }
+
+            // Create the "run all" button
+            table.innerHTML += `
+                <tr>
+                    <td></td>
+                    <td><button onclick="runAll()">Run All</button></td>
+                    <td></td>
+                </tr>
+            `;
+        </script>
+    </body>
+</html>

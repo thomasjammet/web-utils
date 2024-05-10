@@ -45,6 +45,22 @@ npm install
 npm run build
 ```
 
+## Unit tests
+
+This library includes a suite of unit tests that can be run using the following npm command:
+
+```bash
+npm run test
+```
+
+It also allows to run the unit tests in the browser using the following npm command:
+
+```bash
+npm run test:web
+```
+
+Then follow the instructions in the console to run the tests in the browser.
+
 ## Documentation
 
 This monorepo also contains built-in documentation about the APIs in the library, which can be built using the following npm command:
