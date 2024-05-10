@@ -16,6 +16,7 @@ export { NetAddress } from './src/NetAddress';
 export { Numbers } from './src/Numbers';
 export { Queue } from './src//Queue';
 export { SDP } from './src/SDP';
+export { tests } from './src/Tests';
 export * as Util from './src/Util';
 export { WebSocketReliable } from './src/WebSocketReliable';
 
